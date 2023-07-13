@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Sort with DOM Manipulation</title>
+    <script>
+        function customSort(inputString) {
+            const stringWithoutSpaces = inputString.replace(/\s/g, '');
+            const sortedString = stringWithoutSpaces.split('').sort().join('');
+            return sortedString;
+        }
+
+        function handleSortClick() {
+            const inputText = document.getElementById('inputText');
+            const outputDiv = document.getElementById('output');
+            const inputString = inputText.value;
+            const sortedString = customSort(inputString);
+            outputDiv.textContent = sortedString;
+        }
+    </script>
+</head>
+<body>
+    <div id="input">
+        <input type="text" id="inputText" placeholder="Enter a string">
+        <button id="sortButton" onclick="handleSortClick()">Sort</button>
+    </div>
+    <div id="output"></div>
+</body>
+</html>
